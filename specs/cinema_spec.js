@@ -38,14 +38,15 @@ describe('Cinema', function () {
   
   it('should be able to find a film by title', function() {
     // could have used find method
-    actual = { title: 'Moonlight', genre: 'drama', year: 2016, length: 111 };
+    const actual = cinema.searchByTitle('Moonlight');
+    // console.log(actual);
     assert.deepStrictEqual(actual, {title: 'Moonlight', genre: 'drama', year: 2016, length: 111 });
   });
 
-  it('should be able to filter films by genre'), function() {
-    const actual = [{ title: 'Moonlight', genre: 'drama', year: 2016, length: 111 }, {title: 'T2 Trainspotting', genre: 'drama', year: 2017, length: 117 }]
+  xit('should be able to filter films by genre', function() {
+    const actual = cinema.searchByGenre('drama');
     assert.deepStrictEqual(actual, [{ title: 'Moonlight', genre: 'drama', year: 2016, length: 111 }, {title: 'T2 Trainspotting', genre: 'drama', year: 2017, length: 117 }]);
-  };
+  });
   
   xit('should be able to check whether there are some films from a particular year');
   

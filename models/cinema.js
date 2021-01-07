@@ -18,11 +18,20 @@ Cinema.prototype.foundTitles = function() {
   return titles;
 }
 
+
 Cinema.prototype.searchByTitle = function(filmTitle) {
   const foundFilms = this.films.filter((film) => {
     return filmTitle === film.title;
   });
   return foundFilms[0]; //could use find instead
+};
+
+
+Cinema.prototype.searchByGenre = function(filmGenre) {
+  const foundFilms = this.films.filter((film) => {
+    return filmGenre === film.genre;
+  });
+  return foundFilms;
 };
 
 module.exports = Cinema;
